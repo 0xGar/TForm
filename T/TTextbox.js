@@ -37,16 +37,6 @@ import TElement from "./TElement.js";
 export default class TTextBox extends TElement {
     constructor(){
         super();
-        /*
-            TODO: The below code line gives <input> the same id as <t-form></t-form>.
-            Therefore, getQuery() uses an id pointing to two different elements.
-            However, everything works properly because getQuery uses this.querySelector(...),
-            which searches inside of <t-form> but ignores <t-form> itself.
-            Nonetheless, this is poor practice.
-            To fix: let id2 =  this.getAttribute("id")+Symbol();
-            * this.setAttribute("innerId",id2)
-            * Use this.getAttribute("innerId") where relevant.
-        */
         this.innerHTML=`<input type="text" id="${this.getAttribute("id")}">`; //TODO: Remove id
     }
     static get observedAttributes(){
@@ -66,21 +56,13 @@ export default class TTextBox extends TElement {
     }
     setDefaultAttributes(){
         super.setDefaultAttributes();
-        if (!this.hasAttribute("minLength"))
-            this.setAttribute("minLength","0");
-        if (!this.hasAttribute("maxLength"))
-            this.setAttribute("maxLength","1000");
+
         if (!this.hasAttribute("type"))
             this.setAttribute("type","text");
     }
     isValid(s){
         if (!super.isValid(s))
             return;
-        if (s.length > +this.getAttribute("maxLength"))
-            return false;
-        if (s.length < +this.getAttribute("minLength"))
-            return false;
-        return true;
     }
     onValid(element){
             element.style.setProperty("background","linear-gradient(90deg, rgba(0,255,0,1) 0%, rgba(255,255,255,1) 1%)","important");
