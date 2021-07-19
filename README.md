@@ -1,8 +1,10 @@
 # About
 
-TForm is a dynamic webform written in vanilla JavaScript. It replaces the need for the standard &lt;form&gt; element, giving enhanced functionality because of its dynamic nature. 
+***May or may not continue development on this***
+
+TForm is a dynamic webform written in vanilla JavaScript. Its ultimate end-goal is to replace the need for the standard &lt;form&gt; element, giving enhanced functionality because of its dynamic nature. 
   
-The project is in its early stages of development, though fully functional. It was extracted from a larger project that I'm working on, and so future developments will reflect the needs of the larger project.
+The project is in its early stages of development, though functional. It was extracted from a larger project that I'm working on, and so if future developments continue it will reflect the needs of said project.
   
 # Usage
   
