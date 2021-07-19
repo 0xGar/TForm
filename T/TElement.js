@@ -163,10 +163,6 @@ export default class TElement extends HTMLElement {
     connectedCallback(){
         let element = this.getQuery();
         this.CSS(element);
-
-        element.onkeyup = function(e) {
-            this.checkValidity(e.target.value);
-        }.bind(this); 
     }
     /*
         Name:           attributeChangedCallback
